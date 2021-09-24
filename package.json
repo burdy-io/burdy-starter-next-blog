@@ -1,0 +1,39 @@
+{
+  "name": "burdy-starter-next-blog",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "burdy dev",
+    "build": "next build && burdy build",
+    "start": "burdy start",
+    "db:init": "burdy db migration:generate -n initial && burdy db migration:run",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "axios": "^0.21.4",
+    "bootstrap": "^5.1.1",
+    "burdy": "^1.0.5",
+    "burdy-web-utils": "^1.0.0",
+    "classnames": "^2.3.1",
+    "date-fns": "^2.24.0",
+    "express": "^4.17.1",
+    "fs-extra": "^10.0.0",
+    "image-size": "^1.0.0",
+    "next": "11.1.2",
+    "react": "17.0.2",
+    "react-bootstrap": "^1.6.3",
+    "react-dom": "17.0.2",
+    "react-jss": "^10.8.0",
+    "typeorm": "^0.2.37",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.13",
+    "@types/fs-extra": "^9.0.13",
+    "@types/react": "17.0.24",
+    "@types/uuid": "^8.3.1",
+    "eslint": "7.32.0",
+    "eslint-config-next": "11.1.2",
+    "sass": "^1.42.1",
+    "typescript": "4.4.3"
+  }
+}

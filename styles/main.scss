@@ -1,0 +1,66 @@
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1260px,
+);
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1200px,
+  xxl: 1400px
+);
+
+$include-column-box-sizing: true !default;
+
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+@import "~bootstrap/scss/vendor/rfs";
+@import "~bootstrap/scss/utilities";
+@import "~bootstrap/scss/utilities/api";
+
+@import "~bootstrap/scss/containers";
+@import "~bootstrap/scss/grid";
+
+@import "~bootstrap/scss/forms";
+@import "~bootstrap/scss/alert";
+
+@import "./richtext";
+
+.image {
+  aspect-ratio: attr(width) / attr(height);
+  width: 100%;
+  height: auto;
+}
+
+.container {
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  height: 8px;
+  width: 8px;
+  background: #f9f9f9;
+  z-index: 12;
+  overflow: visible;
+}
+
+::-webkit-scrollbar-corner {
+  background: #f9f9f9;
+}
+
+::-webkit-scrollbar-thumb {
+  width: 8px;
+  background-color: scale-color(#ea8587, $lightness: 5%);
+  z-index: 12;
+  transition: all 0.32s ease-in-out;
+  transform: scale(0.5);
+  &:hover {
+    background-color: scale-color(#ea8587, $lightness: 10%);
+    transform: scaleX(1);
+  }
+}
