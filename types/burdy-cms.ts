@@ -34,6 +34,9 @@ export interface IBurdyImage {
 }
 
 export type IBurdyBlog = IBurdyPage<{
+  title: string;
+  description: string;
+  featured: [IBurdyImage]
   content: any;
   seo: {
     title: string;

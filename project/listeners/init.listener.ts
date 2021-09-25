@@ -26,21 +26,21 @@ Hooks.addAction('core/firstInit', async () => {
   const localAssetsPath = path.join(process.cwd(), 'assets');
 
   await getManager().transaction(async entityManager => {
-    const userRepository = getEnhancedRepository(User, entityManager);
-    const assetRepository = getEnhancedRepository(Asset, entityManager);
-    const contentTypeRepository = getEnhancedRepository(ContentType, entityManager);
-    const postRepository = getEnhancedRepository(Post, entityManager);
-    const tagsRepository = getEnhancedRepository(Tag, entityManager)
-
-    const author = await userRepository.save({
-      email: 'team@burdy.io',
-      firstName: 'Team',
-      lastName: 'Burdy',
-      password: '/',
-      status: UserStatus.DISABLED,
-    });
-
     try {
+      const userRepository = getEnhancedRepository(User, entityManager);
+      const assetRepository = getEnhancedRepository(Asset, entityManager);
+      const contentTypeRepository = getEnhancedRepository(ContentType, entityManager);
+      const postRepository = getEnhancedRepository(Post, entityManager);
+      const tagsRepository = getEnhancedRepository(Tag, entityManager);
+
+      const author = await userRepository.save({
+        email: 'team@burdy.io',
+        firstName: 'Team',
+        lastName: 'Burdy',
+        password: '/',
+        status: UserStatus.DISABLED,
+      });
+
       const assetPromises = defaultAssets.map(assetEntry => (async () => {
         const uuid = v4();
         const localFile = await fs.readFile(path.join(localAssetsPath, assetEntry.file));
@@ -95,7 +95,7 @@ Hooks.addAction('core/firstInit', async () => {
         slugPath: 'category/it-industry',
         name: 'IT Industry',
         parent: categoryTag
-      })
+      });
 
       const newTerm = await tagsRepository.save({
         author,
@@ -103,7 +103,7 @@ Hooks.addAction('core/firstInit', async () => {
         slugPath: 'term/new',
         name: 'New',
         parent: termTag
-      })
+      });
 
       await postRepository.save({
         ...Migration.posts.executingOnInnovation,
@@ -114,11 +114,15 @@ Hooks.addAction('core/firstInit', async () => {
         meta: [
           ...Migration.posts.executingOnInnovation.meta,
           {
-            "key": "content.seo.featured",
-            "value": `[{"id":${innovationAsset.id}}]`
+            'key': 'content.seo.featured',
+            'value': `[{"id":${innovationAsset.id}}]`
+          },
+          {
+            'key': 'content.featured',
+            'value': `[{"id":${innovationAsset.id}}]`
           },
         ]
-      })
+      });
 
       await postRepository.save({
         ...Migration.posts.lifeOnMars,
@@ -129,11 +133,15 @@ Hooks.addAction('core/firstInit', async () => {
         meta: [
           ...Migration.posts.lifeOnMars.meta,
           {
-            "key": "content.seo.featured",
-            "value": `[{\"id\":${marsAsset.id}}]`
+            'key': 'content.seo.featured',
+            'value': `[{\"id\":${marsAsset.id}}]`
+          },
+          {
+            'key': 'content.featured',
+            'value': `[{\"id\":${marsAsset.id}}]`
           },
         ]
-      })
+      });
 
       await postRepository.save({
         ...Migration.posts.scalabilityInSoftware,
@@ -144,8 +152,12 @@ Hooks.addAction('core/firstInit', async () => {
         meta: [
           ...Migration.posts.scalabilityInSoftware.meta,
           {
-            "key": "content.seo.featured",
-            "value": `[{\"id\":${itIndustryAsset.id}}]`
+            'key': 'content.seo.featured',
+            'value': `[{\"id\":${itIndustryAsset.id}}]`
+          },
+          {
+            'key': 'content.featured',
+            'value': `[{\"id\":${itIndustryAsset.id}}]`
           },
         ]
       });

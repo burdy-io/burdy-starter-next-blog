@@ -41,6 +41,7 @@ const Home: NextPage<IHomeProps> = ({blogs, categories, count, categorySlug}) =>
 
   return (
     <>
+      <SeoHead title="Burdy - Next Blog" description="" />
       <CategoryTabs tags={categories} activeSlug={categorySlug} />
       <Container className={classes.container}>
         <Typography variant="h1" className={classes.heading}>

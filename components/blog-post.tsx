@@ -81,7 +81,7 @@ export interface IBlogPostProps {
 const BlogPost: React.VoidFunctionComponent<IBlogPostProps> = ({blog}) => {
   const classes = useStyles();
   const content = blog.meta.content;
-  const featured = content.seo?.featured?.[0] ?? null;
+  const featured = content?.featured?.[0] ?? null;
   const category = blog.tags.filter(tag => tag.slugPath.startsWith('category'))?.[0]?.name ?? 'Category';
 
   return (
@@ -98,10 +98,10 @@ const BlogPost: React.VoidFunctionComponent<IBlogPostProps> = ({blog}) => {
               {category}
             </Typography>
             <Typography variant="h4" className={classes.title}>
-              {content.seo.title}
+              {content.title}
             </Typography>
             <Typography className={classes.content}>
-              {content.seo.description}
+              {content.description}
             </Typography>
             <div className={classes.info}>
               <div>{blog?.author?.firstName ?? 'Unknown'} {blog?.author?.lastName ?? 'Author'}</div>

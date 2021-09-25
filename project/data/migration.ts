@@ -9,6 +9,35 @@ const Migration = {
         'name': 'main'
       },
       {
+        'type': 'images',
+        'label': 'Featured',
+        'name': 'featured',
+        'multiSelect_$type': 'checkbox',
+        'multiSelect': 'false'
+      },
+      {
+        'type': 'text',
+        'label': 'Title',
+        'name': 'title',
+        'required_$type': 'checkbox',
+        'required': 'false',
+        'defaultValue_$type': 'text',
+        'defaultValue': '',
+        'multiline_$type': 'checkbox',
+        'multiline': 'false'
+      },
+      {
+        'type': 'text',
+        'label': 'Description',
+        'name': 'description',
+        'required_$type': 'checkbox',
+        'required': 'false',
+        'defaultValue_$type': 'text',
+        'defaultValue': '',
+        'multiline_$type': 'checkbox',
+        'multiline': 'false'
+      },
+      {
         'type': 'richtext',
         'label': 'Content',
         'name': 'content'
@@ -24,7 +53,7 @@ const Migration = {
         'name': 'seo',
         'fields': [
           {
-            'type': 'assets',
+            'type': 'images',
             'label': 'Featured',
             'name': 'featured',
             'multiSelect_$type': 'checkbox',
@@ -74,6 +103,26 @@ const Migration = {
           "value": "richtext"
         },
         {
+          "key": "content.description",
+          "value": "Innovation is 1% inspiration and 99% perspiration"
+        },
+        {
+          "key": "content.description_$type",
+          "value": "text"
+        },
+        {
+          "key": "content.featured_$type",
+          "value": "images"
+        },
+        {
+          "key": "content.title",
+          "value": "Executing on Innovation"
+        },
+        {
+          "key": "content.title_$type",
+          "value": "text"
+        },
+        {
           "key": "content.seo.description",
           "value": "Innovation is 1% inspiration and 99% perspiration"
         },
@@ -83,7 +132,7 @@ const Migration = {
         },
         {
           "key": "content.seo.featured_$type",
-          "value": "assets"
+          "value": "images"
         },
         {
           "key": "content.seo.title",
@@ -118,6 +167,26 @@ const Migration = {
           "value": "richtext"
         },
         {
+          "key": "content.description",
+          "value": "How would we ever recognize life Mars? Here's how."
+        },
+        {
+          "key": "content.description_$type",
+          "value": "text"
+        },
+        {
+          "key": "content.featured_$type",
+          "value": "images"
+        },
+        {
+          "key": "content.title",
+          "value": "Life on Mars?"
+        },
+        {
+          "key": "content.title_$type",
+          "value": "text"
+        },
+        {
           "key": "content.seo.description",
           "value": "How would we ever recognize life Mars? Here's how."
         },
@@ -127,7 +196,7 @@ const Migration = {
         },
         {
           "key": "content.seo.featured_$type",
-          "value": "assets"
+          "value": "images"
         },
         {
           "key": "content.seo.title",
@@ -159,6 +228,26 @@ const Migration = {
           "value": "richtext"
         },
         {
+          "key": "content.description",
+          "value": "Maximize Your Business’s Value Through Scalability"
+        },
+        {
+          "key": "content.description_$type",
+          "value": "text"
+        },
+        {
+          "key": "content.featured_$type",
+          "value": "images"
+        },
+        {
+          "key": "content.title",
+          "value": "Scalability in Software"
+        },
+        {
+          "key": "content.title_$type",
+          "value": "text"
+        },
+        {
           "key": "content.seo.description",
           "value": "Maximize Your Business’s Value Through Scalability"
         },
@@ -168,7 +257,7 @@ const Migration = {
         },
         {
           "key": "content.seo.featured_$type",
-          "value": "assets"
+          "value": "images"
         },
         {
           "key": "content.seo.title",

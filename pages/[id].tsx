@@ -48,8 +48,8 @@ const BlogPage: React.VoidFunctionComponent<IBlogPageProps> = ({blog}) => {
         <div className={classNames('richtext-container', 'richtext', classes.container)}>
           <div className="meta">
             <div className="info">
-              <h1>{content.seo.title}</h1>
-              <p className="subtitle">{content.seo.description}</p>
+              <h1>{content.title}</h1>
+              <p className="subtitle">{content.description}</p>
               <div className={classes.termContainer}>
                 {terms.map(term => (
                   <div key={term.id} className={classes.term}>{term.name}</div>
@@ -66,7 +66,7 @@ const BlogPage: React.VoidFunctionComponent<IBlogPageProps> = ({blog}) => {
                 </div>
               </div>
             </div>
-            <Image image={content.seo.featured[0]} className="image"/>
+            <Image image={content.featured[0]} className="image"/>
           </div>
           <main className="article" dangerouslySetInnerHTML={{__html: html}}/>
         </div>
