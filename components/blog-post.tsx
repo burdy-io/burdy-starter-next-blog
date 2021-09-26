@@ -9,7 +9,6 @@ import { format } from 'date-fns';
 
 const useStyles = createUseStyles({
   blogWrapper: {
-    height: '100%',
     width: '100%'
   },
   blog: {
