@@ -6,6 +6,20 @@
   letter-spacing: -0.03px;
   line-height: 1.58;
 
+  main.article {
+    overflow: hidden;
+  }
+
+  p {
+    margin-bottom: 1rem;
+  }
+
+  figcaption {
+    text-align: center;
+    font-size: 14px;
+    color: #757575;
+  }
+
   img {
     aspect-ratio: attr(width) / attr(height);
     width: 100%;
@@ -13,11 +27,13 @@
   }
 
   pre {
-    white-space: pre-wrap;
     font-size: 18px;
     background: rgba(0,0,0,.05);
     border-radius: 2px;
-    padding: 3px 5px;
+    padding: 1rem;
+    overflow-wrap: normal;
+    word-break: normal;
+    overflow-x: auto;
   }
 
   ul, ol, li {
@@ -259,8 +275,8 @@
     }
 
     .meta {
-      -ms-grid-rows: 1fr 1fr;
-      grid-template-rows: 1fr 1fr;
+      -ms-grid-rows: 1fr max-content;
+      grid-template-rows: 1fr max-content;
       -ms-grid-columns: 1fr;
       grid-template-columns: 1fr;
       grid-template-areas:
