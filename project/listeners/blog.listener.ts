@@ -18,7 +18,7 @@ Hooks.addAction('api/init', async (app) => {
   }));
 
   app.get('/blogs', asyncMiddleware(async (req, res) => {
-    const {skip, take = 20, tags} = req.query as any;
+    const {tags} = req.query as any;
     const postRepository = getEnhancedRepository(Post);
 
     const countQb = postRepository.createQueryBuilder('post_count')
@@ -50,14 +50,6 @@ Hooks.addAction('api/init', async (app) => {
     }
 
     qb.addOrderBy('post.updatedAt', 'DESC');
-
-    if (skip) {
-      qb.skip(skip as any);
-    }
-
-    if (take) {
-      qb.take(take as any);
-    }
 
     const [posts, count] = await Promise.all([
       qb.getMany(),
