@@ -6,6 +6,20 @@
   letter-spacing: -0.03px;
   line-height: 1.58;
 
+  img {
+    aspect-ratio: attr(width) / attr(height);
+    width: 100%;
+    height: auto;
+  }
+
+  pre {
+    white-space: pre-wrap;
+    font-size: 18px;
+    background: rgba(0,0,0,.05);
+    border-radius: 2px;
+    padding: 3px 5px;
+  }
+
   ul, ol, li {
     list-style-position: inside;
     padding-left: 0;
