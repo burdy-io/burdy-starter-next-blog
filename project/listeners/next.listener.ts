@@ -14,6 +14,6 @@ Hooks.addAction('server/init', async (app) => {
   app.use(express.static(nextPublic));
 
   app.get('*', asyncMiddleware((req, res) => {
-    return nextApp.render(req, res, req.path);
+    return nextApp.render(req, res, req.path, req.query as any);
   }));
 });
